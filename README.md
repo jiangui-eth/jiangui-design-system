@@ -1,13 +1,13 @@
 # jiangui-design-system
 
-A design system monorepo built with Turborepo and pnpm. Namespace: `@jiangui-ds/`.
+A design system monorepo built with Turborepo and pnpm. Namespace: `@jiangui-eth/`.
 
 ## Packages
 
-- `@jiangui-ds/tokens` — Design tokens (colors, spacing, typography)
-- `@jiangui-ds/icons` — Icon library
-- `@jiangui-ds/primitives` — Primitive/base components
-- `@jiangui-ds/components` — Composed UI components
+- `@jiangui-eth/tokens` — Design tokens (colors, spacing, typography)
+- `@jiangui-eth/icons` — Icon library
+- `@jiangui-eth/primitives` — Primitive/base components
+- `@jiangui-eth/components` — Composed UI components
 
 ## Apps
 

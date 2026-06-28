@@ -1,5 +1,5 @@
 {
-  "extends": "@jiangui-ds/typescript-config/react-library.json",
+  "extends": "@jiangui-eth/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
     "strictNullChecks": true

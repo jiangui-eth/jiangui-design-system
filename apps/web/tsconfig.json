@@ -1,5 +1,5 @@
 {
-  "extends": "@jiangui-ds/typescript-config/nextjs.json",
+  "extends": "@jiangui-eth/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {

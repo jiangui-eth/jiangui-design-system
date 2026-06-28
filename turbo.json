@@ -27,7 +27,7 @@
       "outputs": ["coverage/**"]
     },
     "storybook:build": {
-      "dependsOn": ["@jiangui-ds/components#build", "@jiangui-ds/tokens#build"],
+      "dependsOn": ["@jiangui-eth/components#build", "@jiangui-eth/tokens#build"],
       "outputs": ["storybook-static/**"]
     },
     "web#build": {

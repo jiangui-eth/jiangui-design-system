@@ -9,7 +9,7 @@
 
 ## 背景
 
-`@jiangui-ds/components` 包需要确定一套组件内部样式方案。该决策的影响范围包括：
+`@jiangui-eth/components` 包需要确定一套组件内部样式方案。该决策的影响范围包括：
 
 - 组件代码的可维护性与可读性
 - 构建产物的体积与运行时开销
@@ -190,7 +190,7 @@ Button.displayName = 'Button'
 <html data-theme="dark">
 ```
 
-`@jiangui-ds/tokens` 的 `dist/css/tokens.dark.css` 已生成 `[data-theme="dark"]` 选择器下的 Token 覆盖，所有组件样式自动跟随切换。
+`@jiangui-eth/tokens` 的 `dist/css/tokens.dark.css` 已生成 `[data-theme="dark"]` 选择器下的 Token 覆盖，所有组件样式自动跟随切换。
 
 **5. 消费者集成**
 
@@ -198,8 +198,8 @@ Button.displayName = 'Button'
 
 ```ts
 // 应用入口（如 main.ts / _app.tsx）
-import '@jiangui-ds/tokens/css'       // :root Token（亮色 + primitive）
-import '@jiangui-ds/tokens/dark'      // [data-theme="dark"] 覆盖（可选）
+import '@jiangui-eth/tokens/css'       // :root Token（亮色 + primitive）
+import '@jiangui-eth/tokens/dark'      // [data-theme="dark"] 覆盖（可选）
 ```
 
 组件样式通过 tsup 打包进 `dist/index.css`（T0-11 配置 tsup `injectStyle` 或单独导入）。
