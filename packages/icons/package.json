@@ -5,7 +5,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -18,5 +20,17 @@
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
     "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --noEmit"
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "dependencies": {
+    "lucide-react": "^1.21.0"
   }
 }
