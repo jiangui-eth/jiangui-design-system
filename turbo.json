@@ -21,11 +21,17 @@
     },
     "test": {
       "dependsOn": ["^build"],
-      "outputs": ["coverage/**"]
+      "outputs": ["coverage/**"],
+      "cache": false
     },
     "storybook:build": {
-      "dependsOn": ["@jiangui-ds/components#build"],
+      "dependsOn": ["@jiangui-ds/components#build", "@jiangui-ds/tokens#build"],
       "outputs": ["storybook-static/**"]
+    },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**"]
     }
   }
 }
