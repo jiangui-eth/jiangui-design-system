@@ -1,5 +1,5 @@
 {
-  "name": "@jiangui-ds/eslint-config",
+  "name": "@jiangui-eth/eslint-config",
   "version": "0.0.1",
   "type": "module",
   "private": true,

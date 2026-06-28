@@ -1,5 +1,5 @@
 {
-  "name": "@jiangui-ds/tokens",
+  "name": "@jiangui-eth/tokens",
   "version": "0.0.1",
   "private": false,
   "main": "./dist/index.js",

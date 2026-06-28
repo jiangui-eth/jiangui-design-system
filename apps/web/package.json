@@ -11,14 +11,14 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@jiangui-ds/ui": "workspace:*",
+    "@jiangui-eth/ui": "workspace:*",
     "next": "16.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@jiangui-ds/eslint-config": "workspace:*",
-    "@jiangui-ds/typescript-config": "workspace:*",
+    "@jiangui-eth/eslint-config": "workspace:*",
+    "@jiangui-eth/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",

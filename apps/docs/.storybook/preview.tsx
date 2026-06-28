@@ -1,6 +1,6 @@
 import React from 'react'
-import '@jiangui-ds/tokens/css'
-import '@jiangui-ds/tokens/dark'
+import '@jiangui-eth/tokens/css'
+import '@jiangui-eth/tokens/dark'
 import type { Preview, Decorator } from '@storybook/react'
 
 // Apply data-theme attribute to <html> so CSS variables switch correctly

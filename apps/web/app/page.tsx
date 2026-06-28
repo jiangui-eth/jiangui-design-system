@@ -1,5 +1,5 @@
 import Image, { type ImageProps } from "next/image";
-import { Button } from "@jiangui-ds/ui/button";
+import { Button } from "@jiangui-eth/ui/button";
 import styles from "./page.module.css";
 
 type Props = Omit<ImageProps, "src"> & {

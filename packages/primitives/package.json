@@ -1,5 +1,5 @@
 {
-  "name": "@jiangui-ds/primitives",
+  "name": "@jiangui-eth/primitives",
   "version": "0.0.1",
   "private": false,
   "main": "./dist/index.js",

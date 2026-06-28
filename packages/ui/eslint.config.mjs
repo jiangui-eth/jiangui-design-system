@@ -1,4 +1,4 @@
-import { config } from "@jiangui-ds/eslint-config/react-internal";
+import { config } from "@jiangui-eth/eslint-config/react-internal";
 
 /** @type {import("eslint").Linter.Config} */
 export default config;

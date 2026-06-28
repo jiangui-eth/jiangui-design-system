@@ -1,5 +1,5 @@
 {
-  "name": "@jiangui-ds/ui",
+  "name": "@jiangui-eth/ui",
   "version": "0.0.1",
   "private": true,
   "exports": {
@@ -11,8 +11,8 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@jiangui-ds/eslint-config": "workspace:*",
-    "@jiangui-ds/typescript-config": "workspace:*",
+    "@jiangui-eth/eslint-config": "workspace:*",
+    "@jiangui-eth/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",

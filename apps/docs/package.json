@@ -8,8 +8,8 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
-    "@jiangui-ds/components": "workspace:*",
-    "@jiangui-ds/tokens": "workspace:*",
+    "@jiangui-eth/components": "workspace:*",
+    "@jiangui-eth/tokens": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
