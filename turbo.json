@@ -24,7 +24,7 @@
       "outputs": ["coverage/**"]
     },
     "storybook:build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["@jiangui-ds/components#build"],
       "outputs": ["storybook-static/**"]
     }
   }
