@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@jiangui-eth/icons": "workspace:*",
+    "@jiangui-eth/primitives": "workspace:*",
     "@jiangui-eth/tokens": "workspace:*"
   },
   "devDependencies": {
