@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    branches: [main]
+
+# Cancel in-progress runs for the same branch/PR on new push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality Gates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # needed for Turborepo affected-package detection
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Persist Turborepo's local file cache across CI runs
+      - name: Restore Turborepo cache
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      # ── Gate 1: Build ──────────────────────────────────────────────────────
+      - name: "Gate 1 · Build"
+        run: pnpm turbo build --ui=stream
+
+      # ── Gate 2: Type check ─────────────────────────────────────────────────
+      - name: "Gate 2 · Type check"
+        run: pnpm turbo check-types --ui=stream
+
+      # ── Gate 3: Lint ───────────────────────────────────────────────────────
+      - name: "Gate 3 · Lint"
+        run: pnpm turbo lint --ui=stream
+
+      # ── Gate 4: Unit + A11y tests ──────────────────────────────────────────
+      # Failure here means a unit test or jest-axe a11y check regressed.
+      # PRs cannot merge until all tests pass.
+      - name: "Gate 4 · Test (unit + a11y)"
+        run: pnpm turbo test --ui=stream
+
+      # ── Gate 5: Storybook build ────────────────────────────────────────────
+      # A Storybook build failure means a story is broken or missing.
+      # This enforces the "no component without a Story" convention.
+      - name: "Gate 5 · Storybook build (story coverage)"
+        run: pnpm turbo storybook:build --ui=stream
