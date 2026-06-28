@@ -1,0 +1,89 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border: 1px solid transparent;
+  border-radius: var(--ds-button-border-radius);
+  font-weight: var(--ds-button-font-weight);
+  font-size: var(--ds-font-size-sm);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  text-decoration: none;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--ds-button-border-focus);
+  outline-offset: 2px;
+}
+
+/* --- variants --- */
+
+.primary {
+  background-color: var(--ds-button-bg-primary);
+  color: var(--ds-button-text-primary);
+  border-color: var(--ds-button-bg-primary);
+}
+.primary:hover:not(:disabled) {
+  background-color: var(--ds-button-bg-primary-hover);
+  border-color: var(--ds-button-bg-primary-hover);
+}
+.primary:active:not(:disabled) {
+  background-color: var(--ds-button-bg-primary-active);
+  border-color: var(--ds-button-bg-primary-active);
+}
+
+.secondary {
+  background-color: var(--ds-button-bg-secondary);
+  color: var(--ds-button-text-secondary);
+  border-color: var(--ds-button-bg-secondary);
+}
+.secondary:hover:not(:disabled) {
+  background-color: var(--ds-button-bg-secondary-hover);
+  border-color: var(--ds-button-bg-secondary-hover);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--ds-button-text-ghost);
+  border-color: var(--ds-button-border-default);
+}
+.ghost:hover:not(:disabled) {
+  background-color: var(--ds-button-bg-ghost-hover);
+}
+
+/* --- sizes --- */
+
+.sm {
+  padding: calc(var(--ds-button-padding-sm) / 2) var(--ds-button-padding-sm);
+  font-size: var(--ds-font-size-xs);
+}
+
+.md {
+  padding: calc(var(--ds-button-padding-md) / 2) var(--ds-button-padding-md);
+  font-size: var(--ds-font-size-sm);
+}
+
+.lg {
+  padding: calc(var(--ds-button-padding-lg) / 2) var(--ds-button-padding-lg);
+  font-size: var(--ds-font-size-md);
+}
+
+/* --- disabled --- */
+
+.root:disabled,
+.root[aria-disabled='true'] {
+  background-color: var(--ds-button-bg-disabled);
+  color: var(--ds-button-text-disabled);
+  border-color: var(--ds-button-border-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* --- full width --- */
+
+.fullWidth {
+  width: 100%;
+}

@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   test: {
+    css: {
+      modules: { classNameStrategy: 'non-scoped' },
+    },
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test-setup.ts'],
@@ -12,7 +15,14 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/**/*.stories.{ts,tsx}', 'src/**/*.test.{ts,tsx}', 'src/test-setup.ts', 'src/index.ts'],
+      exclude: [
+        'src/**/*.stories.{ts,tsx}',
+        'src/**/*.test.{ts,tsx}',
+        'src/**/*.d.ts',
+        'src/test-setup.ts',
+        'src/index.ts',
+        'src/**/index.ts',
+      ],
       thresholds: { lines: 80, functions: 80, branches: 75, statements: 80 },
     },
   },
