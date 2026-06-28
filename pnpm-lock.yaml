@@ -121,6 +121,9 @@ importers:
       '@jiangui-eth/icons':
         specifier: workspace:*
         version: link:../icons
+      '@jiangui-eth/primitives':
+        specifier: workspace:*
+        version: link:../primitives
       '@jiangui-eth/tokens':
         specifier: workspace:*
         version: link:../tokens
