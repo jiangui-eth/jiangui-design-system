@@ -21,3 +21,6 @@ export type { PopoverProps } from './Popover'
 
 export { Dialog } from './Dialog'
 export type { DialogProps } from './Dialog'
+
+export { ToastProvider, useToast } from './Toast'
+export type { ToastProviderProps, ToastItem, ToastVariant } from './Toast'
