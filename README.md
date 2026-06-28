@@ -1,151 +1,102 @@
 # jiangui-design-system
 
-A design system monorepo built with Turborepo and pnpm. Namespace: `@jiangui-eth/`.
+[![npm](https://img.shields.io/npm/v/@jiangui-eth/components?label=%40jiangui-eth%2Fcomponents)](https://www.npmjs.com/package/@jiangui-eth/components)
+[![license](https://img.shields.io/github/license/jiangui-eth/jiangui-design-system)](LICENSE)
 
-## Packages
+A design system monorepo for `@jiangui-eth/` — React component library built with CSS Modules + CSS custom properties. Zero runtime overhead, RSC-compatible, WCAG 2.1 AA accessible.
 
-- `@jiangui-eth/tokens` — Design tokens (colors, spacing, typography)
-- `@jiangui-eth/icons` — Icon library
-- `@jiangui-eth/primitives` — Primitive/base components
-- `@jiangui-eth/components` — Composed UI components
+---
 
-## Apps
+## Published Packages
 
-- `apps/docs` — Storybook documentation site
-- `apps/web` — Business validation app
+| Package | Version | Description |
+|---------|---------|-------------|
+| [`@jiangui-eth/components`](./packages/components) | `0.1.0` | React UI components (Button, Input, Select, Dialog, Toast, …) |
+| [`@jiangui-eth/tokens`](./packages/tokens) | `0.0.1` | Design tokens — CSS custom properties via Style Dictionary v5 |
+| [`@jiangui-eth/icons`](./packages/icons) | `0.1.0` | 29 Lucide icons as React components |
+| [`@jiangui-eth/primitives`](./packages/primitives) | `0.1.0` | Radix UI re-export layer (internal, used by components) |
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+---
 
-### Utilities
+## Quick Start
 
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
+```bash
+npm install @jiangui-eth/components @jiangui-eth/tokens
+# or
+pnpm add @jiangui-eth/components @jiangui-eth/tokens
 ```
 
-Without global `turbo`, use your package manager:
+Import the token stylesheet once at your app entry point:
 
-```sh
-cd my-turborepo
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```ts
+import '@jiangui-eth/tokens/css'          // light mode
+import '@jiangui-eth/tokens/dark'         // optional dark mode
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+Use components:
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+```tsx
+import { Button, Input, Dialog } from '@jiangui-eth/components'
 
-```sh
-turbo build --filter=docs
+export default function Page() {
+  return (
+    <>
+      <Input placeholder="Search…" />
+      <Button variant="primary">Submit</Button>
+    </>
+  )
+}
 ```
 
-Without global `turbo`:
+Dark mode — set `data-theme` on the root element:
 
-```sh
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+```ts
+document.documentElement.setAttribute('data-theme', 'dark')
 ```
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+## Workspace Layout
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+```
+apps/
+  docs/     Storybook 8 — component documentation
+  web/      Next.js demo app
 
-```sh
-cd my-turborepo
-turbo dev
+packages/
+  components/      @jiangui-eth/components   React UI components
+  tokens/          @jiangui-eth/tokens        CSS custom property tokens
+  icons/           @jiangui-eth/icons         SVG icon components
+  primitives/      @jiangui-eth/primitives    Radix UI re-export layer
+  eslint-config/   Shared ESLint flat config
+  typescript-config/ Shared tsconfig presets
 ```
 
-Without global `turbo`, use your package manager:
+---
 
-```sh
-cd my-turborepo
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+## Development
+
+**Requirements:** Node ≥ 22, pnpm ≥ 11.5.1
+
+```bash
+pnpm install               # install all dependencies
+pnpm turbo dev             # start all dev watchers (Storybook + Next.js)
+pnpm turbo build           # build all packages
+pnpm turbo test            # run unit + a11y tests
+pnpm format                # prettier --write
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+Full local CI gate (same as GitHub Actions):
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo dev --filter=web
+```bash
+pnpm turbo build check-types lint test storybook:build
 ```
 
-Without global `turbo`:
+---
 
-```sh
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+## Links
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+- [Storybook (docs site)](./apps/docs) — run `pnpm turbo dev` to launch locally
+- [npm — @jiangui-eth/components](https://www.npmjs.com/package/@jiangui-eth/components)
+- [Architecture Decision Records](./docs/adr/)
+- [Phase 1 PR list](./docs/p1-tasks-pr-list.md)

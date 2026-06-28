@@ -1,8 +1,8 @@
 # @jiangui-eth/primitives
 
-Unstyled, accessible UI primitives for the jiangui design system — low-level building blocks that handle behavior and accessibility, leaving visual styling to `@jiangui-eth/components`.
+Radix UI re-export layer for the jiangui design system — provides headless, accessible primitives consumed internally by `@jiangui-eth/components`.
 
-> **Status:** Under development — primitives will be available in a future release.
+> **Note:** This is an **internal package**. External consumers should install `@jiangui-eth/components` instead, which wraps these primitives with styles and a simplified API. Direct use of `@jiangui-eth/primitives` is only needed when building custom styled components in the same monorepo.
 
 ## Installation
 
@@ -20,16 +20,33 @@ pnpm add @jiangui-eth/primitives
 - **Accessible** — correct ARIA roles, keyboard navigation, and focus management out of the box
 - **Composable** — primitives compose into higher-level components in `@jiangui-eth/components`
 
-## Planned Primitives
+## Exported Namespaces
 
-| Primitive | Description |
-|-----------|-------------|
-| `Dialog` | Modal dialog with focus trap and `aria-modal` |
-| `Popover` | Floating content anchored to a trigger |
-| `Select` | Custom select with listbox pattern |
-| `Tabs` | Tab panel with keyboard navigation |
-| `Toggle` | Controlled boolean toggle |
-| `Tooltip` | Accessible tooltip with hover/focus triggers |
+Each primitive is exported as a namespace matching its Radix package:
+
+```ts
+import { Dialog, Popover, Tooltip } from '@jiangui-eth/primitives'
+
+// Access Radix sub-components via the namespace
+<Dialog.Root open={open} onOpenChange={setOpen}>
+  <Dialog.Trigger asChild>...</Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Overlay />
+    <Dialog.Content>...</Dialog.Content>
+  </Dialog.Portal>
+</Dialog.Root>
+```
+
+| Namespace | Radix Package | Used by |
+|-----------|---------------|---------|
+| `Dialog` | `@radix-ui/react-dialog` | `Dialog` component |
+| `Popover` | `@radix-ui/react-popover` | `Popover` component |
+| `Tooltip` | `@radix-ui/react-tooltip` | `Tooltip` component |
+| `Select` | `@radix-ui/react-select` | `Select` component |
+| `Checkbox` | `@radix-ui/react-checkbox` | `Checkbox` component |
+| `Radio` | `@radix-ui/react-radio-group` | `Radio` / `RadioGroup` components |
+| `Switch` | `@radix-ui/react-switch` | `Switch` component |
+| `Toast` | `@radix-ui/react-toast` | `ToastProvider` / `useToast` |
 
 ## Development
 

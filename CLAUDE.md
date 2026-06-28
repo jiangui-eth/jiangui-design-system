@@ -1,6 +1,6 @@
 # jiangui-design-system
 
-Monorepo for the `@jiangui-eth/` design system. Turborepo + pnpm workspaces. Phase 0 (toolchain) complete; Phase 1 (MVP components) in progress.
+Monorepo for the `@jiangui-eth/` design system. Turborepo + pnpm workspaces. Phase 0 (toolchain) complete; Phase 1 (MVP components) published (v0.1.0); Phase 2 planned.
 
 ## Common Commands
 
