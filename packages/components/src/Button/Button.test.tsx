@@ -8,7 +8,7 @@ import { Button } from './Button'
 describe('Button', () => {
   it('renders children', () => {
     render(<Button>Click me</Button>)
-    expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument()
   })
 
   it('forwards ref', () => {
@@ -20,6 +20,11 @@ describe('Button', () => {
   it('applies variant class', () => {
     const { container } = render(<Button variant="secondary">Secondary</Button>)
     expect(container.firstChild).toHaveClass('secondary')
+  })
+
+  it('applies danger variant class', () => {
+    const { container } = render(<Button variant="danger">Danger</Button>)
+    expect(container.firstChild).toHaveClass('danger')
   })
 
   it('applies size class', () => {
@@ -58,16 +63,51 @@ describe('Button', () => {
     expect(container.firstChild).toHaveClass('custom')
   })
 
+  describe('loading', () => {
+    it('is disabled when loading', () => {
+      render(<Button loading>Save</Button>)
+      expect(screen.getByRole('button')).toBeDisabled()
+    })
+
+    it('sets aria-busy when loading', () => {
+      render(<Button loading>Save</Button>)
+      expect(screen.getByRole('button')).toHaveAttribute('aria-busy', 'true')
+    })
+
+    it('does not call onClick when loading', async () => {
+      const onClick = vi.fn()
+      const user = userEvent.setup()
+      render(<Button loading onClick={onClick}>Save</Button>)
+      await user.click(screen.getByRole('button'), { pointerEventsCheck: 0 })
+      expect(onClick).not.toHaveBeenCalled()
+    })
+
+    it('renders spinner icon when loading', () => {
+      render(<Button loading>Save</Button>)
+      expect(document.querySelector('[aria-hidden]')).toBeInTheDocument()
+    })
+  })
+
   describe('accessibility', () => {
-    it.each(['primary', 'secondary', 'ghost'] as const)('%s variant has no violations', async (variant) => {
-      const { container } = render(<Button variant={variant}>{variant}</Button>)
+    it.each(['primary', 'secondary', 'ghost', 'danger'] as const)(
+      '%s variant has no violations',
+      async (variant) => {
+        const { container } = render(<Button variant={variant}>{variant}</Button>)
+        expect(
+          await axe(container, { rules: { 'color-contrast': { enabled: false } } }),
+        ).toHaveNoViolations()
+      },
+    )
+
+    it('disabled button has no violations', async () => {
+      const { container } = render(<Button disabled>Disabled</Button>)
       expect(
         await axe(container, { rules: { 'color-contrast': { enabled: false } } }),
       ).toHaveNoViolations()
     })
 
-    it('disabled button has no violations', async () => {
-      const { container } = render(<Button disabled>Disabled</Button>)
+    it('loading button has no violations', async () => {
+      const { container } = render(<Button loading>Loading</Button>)
       expect(
         await axe(container, { rules: { 'color-contrast': { enabled: false } } }),
       ).toHaveNoViolations()

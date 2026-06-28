@@ -71,6 +71,35 @@
   font-size: var(--ds-font-size-md);
 }
 
+.danger {
+  background-color: var(--ds-color-error);
+  color: var(--ds-color-text-on-error);
+  border-color: var(--ds-color-error);
+}
+.danger:hover:not(:disabled) {
+  background-color: var(--ds-color-red-700, var(--ds-color-error));
+  border-color: var(--ds-color-red-700, var(--ds-color-error));
+}
+.danger:active:not(:disabled) {
+  background-color: var(--ds-color-red-800, var(--ds-color-error));
+  border-color: var(--ds-color-red-800, var(--ds-color-error));
+}
+
+/* --- loading --- */
+
+.loading {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
 /* --- disabled --- */
 
 .root:disabled,

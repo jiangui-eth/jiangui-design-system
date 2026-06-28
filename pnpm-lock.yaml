@@ -118,6 +118,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@jiangui-eth/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@jiangui-eth/tokens':
         specifier: workspace:*
         version: link:../tokens
