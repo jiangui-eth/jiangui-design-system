@@ -1,13 +1,13 @@
 {
   "button": {
     "bg": {
-      "primary":         { "value": "{color.primary.DEFAULT}", "type": "color" },
-      "primary-hover":   { "value": "{color.primary.hover}",   "type": "color" },
-      "primary-active":  { "value": "{color.primary.active}",  "type": "color" },
-      "secondary":       { "value": "{color.secondary.DEFAULT}","type": "color" },
-      "secondary-hover": { "value": "{color.secondary.hover}",  "type": "color" },
-      "ghost-hover":     { "value": "{color.bg.subtle}",        "type": "color" },
-      "disabled":        { "value": "{color.bg.disabled}",      "type": "color" }
+      "primary":         { "value": "{color.primary}",        "type": "color" },
+      "primary-hover":   { "value": "{color.primary-hover}",  "type": "color" },
+      "primary-active":  { "value": "{color.primary-active}", "type": "color" },
+      "secondary":       { "value": "{color.secondary}",      "type": "color" },
+      "secondary-hover": { "value": "{color.secondary-hover}","type": "color" },
+      "ghost-hover":     { "value": "{color.bg.subtle}",      "type": "color" },
+      "disabled":        { "value": "{color.bg.disabled}",    "type": "color" }
     },
     "text": {
       "primary":   { "value": "{color.text.on-primary}", "type": "color" },
