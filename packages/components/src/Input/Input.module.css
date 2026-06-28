@@ -1,0 +1,67 @@
+.root {
+  display: block;
+  width: 100%;
+  background-color: var(--ds-input-bg-default);
+  color: var(--ds-input-text-default);
+  border: 1px solid var(--ds-input-border-default);
+  border-radius: var(--ds-input-border-radius);
+  font-size: var(--ds-input-font-size);
+  font-family: inherit;
+  padding: var(--ds-input-padding-y) var(--ds-input-padding-x);
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+  box-sizing: border-box;
+}
+
+.root::placeholder {
+  color: var(--ds-input-text-placeholder);
+}
+
+.root:hover:not(:disabled) {
+  border-color: var(--ds-input-border-hover);
+}
+
+.root:focus {
+  border-color: var(--ds-input-border-focus);
+  box-shadow: 0 0 0 3px var(--ds-color-primary-subtle);
+}
+
+.root:disabled {
+  background-color: var(--ds-input-bg-disabled);
+  color: var(--ds-input-text-disabled);
+  border-color: var(--ds-input-border-disabled);
+  cursor: not-allowed;
+}
+
+/* --- status --- */
+
+.error {
+  border-color: var(--ds-input-border-error);
+}
+
+.error:focus {
+  box-shadow: 0 0 0 3px var(--ds-color-error-subtle);
+}
+
+.success {
+  border-color: var(--ds-color-border-success, var(--ds-color-green-500));
+}
+
+/* --- sizes --- */
+
+.sm {
+  font-size: var(--ds-font-size-sm);
+  padding: calc(var(--ds-input-padding-y) * 0.75) var(--ds-input-padding-x);
+}
+
+.lg {
+  font-size: var(--ds-font-size-lg);
+  padding: calc(var(--ds-input-padding-y) * 1.25) var(--ds-input-padding-x);
+}
+
+/* --- textarea --- */
+
+.textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
