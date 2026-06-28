@@ -81,9 +81,9 @@ importers:
 
   apps/web:
     dependencies:
-      '@jiangui-eth/ui':
+      '@jiangui-eth/components':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/components
       next:
         specifier: 16.2.0
         version: 16.2.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -206,37 +206,6 @@ importers:
         version: 5.5.0(tslib@2.8.1)
 
   packages/typescript-config: {}
-
-  packages/ui:
-    dependencies:
-      react:
-        specifier: ^19.2.0
-        version: 19.2.0
-      react-dom:
-        specifier: ^19.2.0
-        version: 19.2.0(react@19.2.0)
-    devDependencies:
-      '@jiangui-eth/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@jiangui-eth/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.15.3
-      '@types/react':
-        specifier: 19.2.2
-        version: 19.2.2
-      '@types/react-dom':
-        specifier: 19.2.2
-        version: 19.2.2(@types/react@19.2.2)
-      eslint:
-        specifier: ^9.39.1
-        version: 9.39.1
-      typescript:
-        specifier: 5.9.2
-        version: 5.9.2
 
 packages:
 
