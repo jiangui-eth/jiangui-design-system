@@ -1,0 +1,15 @@
+{
+  "spacing": {
+    "component": {
+      "xs": { "value": "{spacing.1}", "type": "spacing" },
+      "sm": { "value": "{spacing.2}", "type": "spacing" },
+      "md": { "value": "{spacing.4}", "type": "spacing" },
+      "lg": { "value": "{spacing.6}", "type": "spacing" }
+    },
+    "layout": {
+      "sm": { "value": "{spacing.4}",  "type": "spacing" },
+      "md": { "value": "{spacing.8}",  "type": "spacing" },
+      "lg": { "value": "{spacing.16}", "type": "spacing" }
+    }
+  }
+}

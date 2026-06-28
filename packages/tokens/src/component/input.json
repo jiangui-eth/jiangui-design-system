@@ -1,0 +1,26 @@
+{
+  "input": {
+    "bg": {
+      "default":  { "value": "{color.bg.surface}",  "type": "color" },
+      "disabled": { "value": "{color.bg.disabled}",  "type": "color" }
+    },
+    "text": {
+      "default":     { "value": "{color.text.default}",  "type": "color" },
+      "placeholder": { "value": "{color.text.subtle}",   "type": "color" },
+      "disabled":    { "value": "{color.text.disabled}",  "type": "color" }
+    },
+    "border": {
+      "default": { "value": "{color.border.default}", "type": "color" },
+      "hover":   { "value": "{color.border.strong}",  "type": "color" },
+      "focus":   { "value": "{color.border.focus}",   "type": "color" },
+      "error":   { "value": "{color.border.error}",   "type": "color" },
+      "disabled":{ "value": "{color.border.default}", "type": "color" }
+    },
+    "padding": {
+      "x": { "value": "{spacing.component.md}", "type": "spacing" },
+      "y": { "value": "{spacing.component.sm}", "type": "spacing" }
+    },
+    "border-radius": { "value": "{border-radius.md}", "type": "borderRadius" },
+    "font-size":     { "value": "{font-size.md}",     "type": "fontSize" }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "typography": {
+    "body": {
+      "sm": {
+        "font-size":   { "value": "{font-size.sm}",     "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.regular}", "type": "fontWeight" },
+        "line-height": { "value": "{line-height.normal}",  "type": "lineHeight" }
+      },
+      "md": {
+        "font-size":   { "value": "{font-size.md}",     "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.regular}", "type": "fontWeight" },
+        "line-height": { "value": "{line-height.normal}",  "type": "lineHeight" }
+      },
+      "lg": {
+        "font-size":   { "value": "{font-size.lg}",     "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.regular}", "type": "fontWeight" },
+        "line-height": { "value": "{line-height.relaxed}", "type": "lineHeight" }
+      }
+    },
+    "heading": {
+      "sm": {
+        "font-size":   { "value": "{font-size.xl}",      "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.semibold}", "type": "fontWeight" },
+        "line-height": { "value": "{line-height.tight}",    "type": "lineHeight" }
+      },
+      "md": {
+        "font-size":   { "value": "{font-size.2xl}",     "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.semibold}", "type": "fontWeight" },
+        "line-height": { "value": "{line-height.tight}",    "type": "lineHeight" }
+      },
+      "lg": {
+        "font-size":   { "value": "{font-size.3xl}",     "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.bold}",     "type": "fontWeight" },
+        "line-height": { "value": "{line-height.tight}",    "type": "lineHeight" }
+      },
+      "xl": {
+        "font-size":   { "value": "{font-size.4xl}",     "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.bold}",     "type": "fontWeight" },
+        "line-height": { "value": "{line-height.tight}",    "type": "lineHeight" }
+      }
+    },
+    "label": {
+      "sm": {
+        "font-size":   { "value": "{font-size.xs}",    "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.medium}", "type": "fontWeight" },
+        "line-height": { "value": "{line-height.normal}", "type": "lineHeight" }
+      },
+      "md": {
+        "font-size":   { "value": "{font-size.sm}",    "type": "fontSize" },
+        "font-weight": { "value": "{font-weight.medium}", "type": "fontWeight" },
+        "line-height": { "value": "{line-height.normal}", "type": "lineHeight" }
+      }
+    }
+  }
+}

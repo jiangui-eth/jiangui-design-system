@@ -1,0 +1,31 @@
+{
+  "button": {
+    "bg": {
+      "primary":         { "value": "{color.primary.DEFAULT}", "type": "color" },
+      "primary-hover":   { "value": "{color.primary.hover}",   "type": "color" },
+      "primary-active":  { "value": "{color.primary.active}",  "type": "color" },
+      "secondary":       { "value": "{color.secondary.DEFAULT}","type": "color" },
+      "secondary-hover": { "value": "{color.secondary.hover}",  "type": "color" },
+      "ghost-hover":     { "value": "{color.bg.subtle}",        "type": "color" },
+      "disabled":        { "value": "{color.bg.disabled}",      "type": "color" }
+    },
+    "text": {
+      "primary":   { "value": "{color.text.on-primary}", "type": "color" },
+      "secondary": { "value": "{color.text.on-primary}", "type": "color" },
+      "ghost":     { "value": "{color.text.default}",    "type": "color" },
+      "disabled":  { "value": "{color.text.disabled}",   "type": "color" }
+    },
+    "border": {
+      "default":  { "value": "{color.border.default}", "type": "color" },
+      "focus":    { "value": "{color.border.focus}",   "type": "color" },
+      "disabled": { "value": "{color.border.default}", "type": "color" }
+    },
+    "padding": {
+      "sm": { "value": "{spacing.component.sm}", "type": "spacing" },
+      "md": { "value": "{spacing.component.md}", "type": "spacing" },
+      "lg": { "value": "{spacing.component.lg}", "type": "spacing" }
+    },
+    "border-radius": { "value": "{border-radius.md}", "type": "borderRadius" },
+    "font-weight":   { "value": "{font-weight.medium}", "type": "fontWeight" }
+  }
+}
