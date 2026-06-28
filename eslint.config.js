@@ -1,4 +1,4 @@
-import { config as baseConfig } from '@repo/eslint-config/base'
+import { config as baseConfig } from '@jiangui-ds/eslint-config/base'
 import globals from 'globals'
 
 /** @type {import("eslint").Linter.Config[]} */
