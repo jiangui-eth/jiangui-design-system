@@ -12,3 +12,9 @@ export type { CheckboxProps, RadioProps, RadioGroupProps, SwitchProps } from './
 
 export { Stack, Grid, Divider } from './Layout'
 export type { StackProps, GridProps, DividerProps } from './Layout'
+
+export { Tooltip } from './Tooltip'
+export type { TooltipProps } from './Tooltip'
+
+export { Popover } from './Popover'
+export type { PopoverProps } from './Popover'
