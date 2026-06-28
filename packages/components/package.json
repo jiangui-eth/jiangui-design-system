@@ -5,7 +5,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -28,6 +30,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
+    "@jiangui-eth/icons": "workspace:*",
     "@jiangui-eth/tokens": "workspace:*"
   },
   "devDependencies": {
