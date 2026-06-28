@@ -45,13 +45,14 @@ describe('jest-axe a11y', () => {
         <p>Component library infrastructure test.</p>
       </main>,
     )
-    expect(await axe(container)).toHaveNoViolations()
+    // color-contrast is disabled: jsdom has no layout engine and cannot compute contrast ratios
+    expect(await axe(container, { rules: { 'color-contrast': { enabled: false } } })).toHaveNoViolations()
   })
 
   test('button with accessible label has no violations', async () => {
     const { container } = render(
       <button type="button" aria-label="Close dialog">×</button>,
     )
-    expect(await axe(container)).toHaveNoViolations()
+    expect(await axe(container, { rules: { 'color-contrast': { enabled: false } } })).toHaveNoViolations()
   })
 })

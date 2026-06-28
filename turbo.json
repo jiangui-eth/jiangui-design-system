@@ -13,16 +13,18 @@
     },
     "lint": {
       "dependsOn": ["^lint"],
+      "inputs": ["$TURBO_DEFAULT$"],
       "outputs": []
     },
     "check-types": {
       "dependsOn": ["^check-types"],
+      "inputs": ["$TURBO_DEFAULT$"],
       "outputs": []
     },
     "test": {
       "dependsOn": ["^build"],
-      "outputs": ["coverage/**"],
-      "cache": false
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["coverage/**"]
     },
     "storybook:build": {
       "dependsOn": ["@jiangui-ds/components#build", "@jiangui-ds/tokens#build"],

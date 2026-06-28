@@ -81,7 +81,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@repo/ui':
+      '@jiangui-ds/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
